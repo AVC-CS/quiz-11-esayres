@@ -53,5 +53,28 @@ int rewritesplitwords(string filename, char delimiter){
 }
 
 string MFN(string stname, int thisyear){
+    int greatestCnt = 0;
+    ifstream file;
+    string foundGreatestName;
+    Name person;
 
+    // open up split file
+    file.open("split.txt");
+    if(!file){
+        cerr << "FILE FAILED TO OPEN" << endl;
+        exit(0);
+    } 
+
+    while(file >> person.stname >> person.gender >> person.year >> person.name >> person.count){
+        // matches the conditions
+        if(person.stname == stname && person.year == thisyear){
+            if(person.count > greatestCnt){
+                greatestCnt = person.count;
+                foundGreatestName = person.name;
+            }
+        }
+    }
+
+    // returns the name
+    return foundGreatestName;
 }
