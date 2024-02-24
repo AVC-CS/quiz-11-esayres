@@ -5,6 +5,17 @@ using namespace std;
 int rewritesplitwords(string, char);
 string MFN(string stname, int thisyear);
 
-/*******************************
- * Code your program here
- *******************************/
+struct Name{
+    string stname;
+    string gender;
+    string name;
+    int count;
+};
+
+int rewritesplitwords(string, char){
+
+}
+
+string MFN(string stname, int thisyear){
+    
+}
